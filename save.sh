@@ -7,7 +7,7 @@ for station in "${STATIONS[@]}"
 do
 	baseurl=https://www.$station.fm/trackliste
 	zcmlimitstart=0
-	for i in {1..10}; do
+	for i in {1..200}; do
 		url=$baseurl?zcmlimitstart=$zcmlimitstart
 		curl $url | grep "$REGEX" -P -o | while read -r line ; do
 			echo $line[station=$station] | tee -a list

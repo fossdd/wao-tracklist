@@ -2,7 +2,7 @@ name: Save
 
 on:
   schedule:
-    - cron: "0 0,6,12,18 * * *"
+    - cron: "0 0 * * 6,2"
   push:
     branches: [ "*" ]
   workflow_dispatch:
