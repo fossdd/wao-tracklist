@@ -4,7 +4,7 @@ The [`list`](list) file contains all tracks played in a WAO station. This list w
 
 Currently does the file contain 13034 lines and it will grow and grow.
 
-### Who does it work?
+### How does it work?
 
 A weekly github CI runs the [`save.sh`](save.sh), commit them and push it.
 
