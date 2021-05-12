@@ -10,10 +10,9 @@ do
 	for i in {1..200}; do
 		url=$baseurl?zcmlimitstart=$zcmlimitstart
 		curl $url | grep "$REGEX" -P -o | sed -e 's/&songTerm=/ - /g' | while read -r line ; do
-			echo $line[station=$station] | tee -a list
+			echo $line | tee -a lists/$station
 		done
 		zcmlimitstart=`expr $zcmlimitstart + 15`
 	done
+	sort -u -o lists/$station lists/$station
 done
-
-sort -u -o list list
